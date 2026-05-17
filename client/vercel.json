@@ -1,11 +1,3 @@
-# Vercel Frontend Configuration
-# ==============================
-# Deploys the React (Vite) frontend as a static site.
-#
-# Set the environment variable VITE_API_URL in Vercel dashboard:
-#   → Settings → Environment Variables
-#   → VITE_API_URL = https://your-render-backend-url.onrender.com
-
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist",

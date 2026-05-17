@@ -10,6 +10,7 @@
  * Each function is tested for normal, edge, and invalid cases.
  */
 
+import { describe, test, expect, beforeEach, afterEach, vi } from "vitest";
 import { buildUrl, resolveErrorMessage, fetchWeather } from "../services/weatherService";
 
 // ═══════════════════════════════════════════════════════════════
@@ -121,11 +122,11 @@ describe("fetchWeather()", () => {
 
   beforeEach(() => {
     // Reset the global fetch mock before each test
-    global.fetch = jest.fn();
+    global.fetch = vi.fn();
   });
 
   afterEach(() => {
-    jest.restoreAllMocks();
+    vi.restoreAllMocks();
   });
 
   // --- Normal case ---

@@ -13,18 +13,10 @@
  *   - Upstream error forwarding (404, 401, network)
  */
 
+
 const request = require("supertest");
 
-// We need to mock the weatherAPI before requiring the app
-jest.mock("../../utils/apiHelper", () => {
-  const original = jest.requireActual("../../utils/apiHelper");
-  return {
-    ...original,
-    weatherAPI: {
-      get: jest.fn(),
-    },
-  };
-});
+
 
 const { weatherAPI } = require("../../utils/apiHelper");
 
@@ -32,7 +24,8 @@ const { weatherAPI } = require("../../utils/apiHelper");
 const ORIGINAL_ENV = process.env;
 
 beforeEach(() => {
-  jest.clearAllMocks();
+  vi.clearAllMocks();
+  vi.spyOn(weatherAPI, "get");
   process.env = { ...ORIGINAL_ENV, OPENWEATHER_API_KEY: "test_api_key_12345" };
 });
 
