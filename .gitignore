@@ -1,0 +1,33 @@
+# ==========================================
+# Weather Dashboard — Root .gitignore
+# ==========================================
+
+# --- Dependencies ---
+node_modules/
+
+# --- Build outputs ---
+client/dist/
+
+# --- Environment files (contain secrets) ---
+.env
+.env.local
+.env.production
+server/.env
+
+# --- IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Logs ---
+*.log
+npm-debug.log*
+
+# --- Vercel ---
+.vercel/

@@ -1,0 +1,29 @@
+# Render.com Deployment Blueprint
+# ================================
+# Deploys the Express backend as a Web Service.
+#
+# Usage:
+#   1. Push this repo to GitHub
+#   2. Go to https://dashboard.render.com/blueprints
+#   3. Click "New Blueprint Instance" and connect your repo
+#   4. Render reads this file and creates the service automatically
+#
+# You must set the OPENWEATHER_API_KEY env var in the Render dashboard.
+
+services:
+  - type: web
+    name: weather-dashboard-api
+    runtime: node
+    region: oregon
+    plan: free
+    rootDir: server
+    buildCommand: npm install
+    startCommand: node index.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: OPENWEATHER_API_KEY
+        sync: false  # Must be set manually in the Render dashboard

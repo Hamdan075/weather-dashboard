@@ -1,0 +1,25 @@
+{
+  "name": "weather-dashboard-server",
+  "version": "1.0.0",
+  "description": "Express backend for Weather Dashboard — proxies OpenWeatherMap API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "jest --verbose --forceExit --detectOpenHandles",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.4.0",
+    "jest": "^30.4.2",
+    "nodemon": "^3.1.4",
+    "supertest": "^7.2.2"
+  }
+}
